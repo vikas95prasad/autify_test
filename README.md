@@ -60,9 +60,8 @@ The app is now running in Docker, with PostgreSQL as the database.
 To run the test suite inside the Docker container, use the following command:
 
 ```bash
-docker-compose run web bin/rails db:create RAILS_ENV=test
-docker-compose run web bin/rails db:migrate RAILS_ENV=test
-docker-compose run test
+docker-compose run web bin/rails db:setup RAILS_ENV=test
+docker-compose run -e RAILS_ENV=test web bundle exec rspec
 ```
 
 This will execute your tests inside the container.

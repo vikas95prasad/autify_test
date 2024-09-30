@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post 'assertions', to: 'assertions#create'
-      get 'assertions', to: 'assertions#index'  # New route to list assertions
+      get 'assertions', to: 'assertions#index'
     end
   end
 end

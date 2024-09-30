@@ -1,6 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'webmock/rspec'
+require 'support/request_helpers'
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
@@ -77,4 +78,8 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.include RequestHelpers, type: :request
 end
+
+WebMock.disable_net_connect!(allow_localhost: true)

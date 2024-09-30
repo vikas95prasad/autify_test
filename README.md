@@ -23,7 +23,7 @@ Make sure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/vikas95prasad/autify_test.git
+git clone git@github.com:vikas95prasad/autify_test.git
 cd autify_test
 ```
 

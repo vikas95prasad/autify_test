@@ -20,31 +20,6 @@ module Assertions
 
     private
 
-    # def download_assets
-    #   html_content.css(*ASSET_TYPES).each do |element|
-    #     asset_url = element['src'] || element['href']
-    #     next unless asset_url
-
-    #     asset_url = asset_url.start_with?('/') ? URI.join(base_url, asset_url).to_s : asset_url
-    #     filename = File.basename(asset_url)
-    #     asset_path = "#{snapshot_dir}/#{filename}"
-
-    #     begin
-    #       binding.pry
-    #       File.write(asset_path, URI.open(asset_url).read)
-
-    #       # Update asset URLs to local paths
-    #       if element.name == 'img'
-    #         element['src'] = filename
-    #       elsif element.name == 'link'
-    #         element['href'] = filename
-    #       end
-    #     rescue OpenURI::HTTPError => e
-    #       Rails.logger.error "Failed to download asset #{asset_url}: #{e.message}"
-    #     end
-    #   end
-    # end
-
     def download_assets
       html_content.css(*ASSET_TYPES).each do |element|
         asset_url = element['src'] || element['href']

@@ -50,7 +50,7 @@ This will create the development database and run any pending migrations.
 Once everything is up and running, you can access the Rails app in your browser at:
 
 ```bas
-[http://localhost:3000](http://localhost:3000)
+http://localhost:3000
 ```
 
 The app is now running in Docker, with PostgreSQL as the database.

@@ -2,7 +2,7 @@ version: '3'
 services:
   db:
     image: postgres:14.2-alpine
-    container_name: autify-test-postgres-14.2
+    container_name: postgres-14.2
     volumes:
       - postgres_data:/var/lib/postgresql/data
     command: 
@@ -13,7 +13,7 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
-  autify-test-web:
+  web:
     build: .
     command: "./bin/rails server"
     environment:

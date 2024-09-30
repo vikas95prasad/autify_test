@@ -9,7 +9,7 @@ module Assertions
 
     def validate!
       validate_presence_of_params
-      validate_url_format
+      validate_url
     end
 
     private
@@ -20,7 +20,7 @@ module Assertions
       end
     end
 
-    def validate_url_format
+    def validate_url
       # Prepend 'http://' if the URL doesn't contain a scheme
       @url = "http://#{@url}" unless @url =~ /\Ahttp(s)?:\/\//
     
@@ -35,6 +35,5 @@ module Assertions
         raise ValidationError, "Invalid URL format."
       end
     end
-
   end
 end
